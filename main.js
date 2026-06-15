@@ -9,8 +9,8 @@ async function fetchJson(url) {
 async function getChefBirthday(id) { 
     try{
          const ricetta = await fetchJson(`https://dummyjson.com/recipes/${id}`);
-    const chef = await fetchJson(`https://dummyjson.com/users/${ricetta.userId}`);
-          return { ...ricetta, chef };
+         const chef = await fetchJson(`https://dummyjson.com/users/${ricetta.userId}`);
+          return chef.birthDate;
     } catch(error){
         throw error
     }
